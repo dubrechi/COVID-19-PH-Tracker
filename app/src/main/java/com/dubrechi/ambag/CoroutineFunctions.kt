@@ -16,7 +16,7 @@ class CoroutineFunctions {
         return coronaApi().casesOutsidePH()
     }
 
-    suspend fun getPUI(): List<PatientUnderInvestigationDTO> {
+    suspend fun getPUI(): MutableList<PatientUnderInvestigationDTO> {
 
         return coronaApi().patientUnderInvestigation()
     }

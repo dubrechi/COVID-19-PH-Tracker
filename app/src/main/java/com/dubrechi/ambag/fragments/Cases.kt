@@ -20,7 +20,7 @@ import kotlinx.coroutines.withContext
  */
 class Cases : Fragment() {
 
-    private fun getCases(){
+    private fun getCases() {
         CoroutineScope(IO).launch {
             withContext(Main) {
 
@@ -44,6 +44,10 @@ class Cases : Fragment() {
                 tv_admitted.text = "Admitted \n${admitted.count()}"
                 tv_died.text = "Died \n${died.count()}"
 
+                if (swipeContainer.isRefreshing) {
+                    swipeContainer.isRefreshing = false
+                }
+
             }
         }
     }
@@ -62,7 +66,7 @@ class Cases : Fragment() {
 
         getCases()
 
-        btn_refresh.setOnClickListener {
+        swipeContainer.setOnRefreshListener {
             tv_cases.text = "Total"
             tv_recovered.text = "Recovered"
             tv_admitted.text = "Admitted"

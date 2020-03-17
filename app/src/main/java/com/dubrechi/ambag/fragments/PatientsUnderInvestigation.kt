@@ -7,11 +7,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dubrechi.ambag.CoroutineFunctions
+import com.dubrechi.ambag.PatientUnderInvestigationDTO
 import com.dubrechi.ambag.R
 import com.dubrechi.ambag.adapter.CaseOutsidePHAdapter
 import com.dubrechi.ambag.adapter.PUIAdapter
+import kotlinx.android.synthetic.main.fragment_cases.*
 import kotlinx.android.synthetic.main.fragment_cases_outisde_ph.*
 import kotlinx.android.synthetic.main.fragment_patients_under_investigation.*
+import kotlinx.android.synthetic.main.fragment_patients_under_investigation.swipeContainer
 import kotlinx.android.synthetic.main.fragment_suspected_cases.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,15 +26,20 @@ import kotlinx.coroutines.withContext
  */
 class PatientsUnderInvestigation : Fragment() {
 
+    private lateinit var cases: MutableList<PatientUnderInvestigationDTO>
+
     private fun getPUI(){
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
 
-                val cases = CoroutineFunctions().getPUI()
+                cases = CoroutineFunctions().getPUI()
 
                 rv_pui.layoutManager = LinearLayoutManager(activity)
                 rv_pui.adapter = PUIAdapter(cases)
 
+                if (swipeContainer.isRefreshing) {
+                    swipeContainer.isRefreshing = false
+                }
             }
         }
     }
@@ -43,6 +51,14 @@ class PatientsUnderInvestigation : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        swipeContainer.setOnRefreshListener {
+
+            cases.clear()
+            rv_pui.adapter?.notifyDataSetChanged()
+
+            getPUI()
+        }
 
         getPUI()
     }

@@ -11,6 +11,6 @@ interface ApiService {
     suspend fun casesOutsidePH(): List<CaseOutsidePhDTO>
 
     @GET("patients-under-investigation")
-    suspend fun patientUnderInvestigation(): List<PatientUnderInvestigationDTO>
+    suspend fun patientUnderInvestigation(): MutableList<PatientUnderInvestigationDTO>
 
 }
