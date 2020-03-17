@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:padding="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="left"-->
+<!--        android:paddingLeft="16dp"-->
+<!--        android:text="Country/Territory/Place"-->
+<!--        android:textStyle="bold"/>-->
+
+    <TextView
+        android:id="@+id/tv_country_territory_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="country_territory_place"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="Confirmed"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_confirmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="confirmed"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="Recovered"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_recovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="recovered"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="Died"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_died"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:paddingLeft="16dp"
+        android:text="died"/>
+
+</LinearLayout>
