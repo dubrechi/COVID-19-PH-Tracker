@@ -44,13 +44,17 @@ class CheckpointsAdapter (private val items: MutableList<CheckpointsDTO>) : Recy
         holder.tvLongitude.text = checkpointsDTO.lng
 
 
-        if (checkpointsDTO.description != "") {
+        if (checkpointsDTO.description?.trim().toString() == "") {
 
-            context?.tv_label_description?.visibility = View.VISIBLE
-            context?.tv_description?.visibility = View.VISIBLE
+            context?.tv_label_description?.visibility = View.GONE
+            context?.tv_description?.visibility = View.GONE
+
+        } else {
 
             holder.tvDescription.text = checkpointsDTO.description
+            holder.tvDescriptionLabel.text = "Description"
         }
+
     }
 
 
@@ -65,5 +69,6 @@ class CheckpointsAdapter (private val items: MutableList<CheckpointsDTO>) : Recy
         val tvLongitude: TextView = view.tv_longitude
 
         val tvDescription: TextView = view.tv_description
+        val tvDescriptionLabel: TextView = view.tv_label_description
     }
 }

@@ -114,9 +114,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="5dp"
-        android:text="Description:"
-        android:textStyle="bold"
-        android:visibility="gone"/>
+        android:textStyle="bold" />
 
 
     <TextView
@@ -124,8 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:paddingLeft="16dp"
-        android:visibility="gone"/>
+        android:paddingLeft="16dp" />
 
 
 </LinearLayout>
