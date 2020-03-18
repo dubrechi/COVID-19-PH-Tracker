@@ -11,69 +11,77 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/mp_piechart"
+            android:background="@color/bg_color"
             android:layout_width="match_parent"
-            android:layout_height="2000dp"
-            android:background="#E0E0E0"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_cases"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="Total"
-                android:textAlignment="center"
-                android:textColor="#01295F"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
+        </com.github.mikephil.charting.charts.PieChart>
 
-            <TextView
-                android:id="@+id/tv_recovered"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="Recovered"
-                android:textAlignment="center"
-                android:textColor="#439323"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_cases"></TextView>
 
-            <TextView
-                android:id="@+id/tv_admitted"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="Admitted"
-                android:textAlignment="center"
-                android:textColor="#FFB30F"
-                android:textSize="30dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_recovered"></TextView>
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="2000dp"-->
+<!--            android:background="#E0E0E0"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/tv_died"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="Died"
-                android:textAlignment="center"
-                android:textColor="#FD151B"
-                android:textSize="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_admitted"
-                app:layout_constraintVertical_bias="0.0"></TextView>
+<!--            <TextView-->
+<!--                android:id="@+id/tv_cases"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:text="Total"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="#01295F"-->
+<!--                android:textSize="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"></TextView>-->
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/tv_recovered"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:text="Recovered"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="#439323"-->
+<!--                android:textSize="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_cases"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_admitted"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:text="Admitted"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="#FFB30F"-->
+<!--                android:textSize="30dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_recovered"></TextView>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_died"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:text="Died"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="#FD151B"-->
+<!--                android:textSize="30dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.498"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/tv_admitted"-->
+<!--                app:layout_constraintVertical_bias="0.0"></TextView>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
     </androidx.core.widget.NestedScrollView>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
