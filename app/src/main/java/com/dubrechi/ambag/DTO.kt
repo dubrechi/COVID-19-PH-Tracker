@@ -27,3 +27,12 @@ data class CurrentPUIStatusDTO(val suspected_cases: SuspectedCasesDTO?,
 data class PatientUnderInvestigationDTO (val region: String?,
                                          val current_pui_status: CurrentPUIStatusDTO,
                                          val total: String?)
+
+data class CheckpointsDTO(val id: Int?,
+                          val district: String?,
+                          val city: String?,
+                          val location: String?,
+                          val type: String?,
+                          val lat: String?,
+                          val lng: String?,
+                          val description: String?)

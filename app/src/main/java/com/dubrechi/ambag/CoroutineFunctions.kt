@@ -40,4 +40,17 @@ class CoroutineFunctions {
         }
     }
 
+    suspend fun getCheckpoints(): MutableList<CheckpointsDTO> {
+
+        return try {
+
+            coronaApi().metroManilaCheckpoints()
+
+        } catch (e: Exception) {
+
+            val emptyList:MutableList<CheckpointsDTO> = ArrayList()
+            emptyList
+        }
+    }
+
 }
