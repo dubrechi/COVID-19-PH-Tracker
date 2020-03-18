@@ -1,10 +1,9 @@
 package com.dubrechi.ambag
 
-import java.math.BigDecimal
-
 data class CaseDTO(val case_no: String?,
                    val date: String?,
                    val age: String?,
+                   val gender: String?,
                    val nationality: String?,
                    val hospital_admitted_to: String?,
                    val had_recent_travel_history_abroad: String?,

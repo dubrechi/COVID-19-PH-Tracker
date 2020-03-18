@@ -1,16 +1,16 @@
 package com.dubrechi.ambag.fragments
 
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.dubrechi.ambag.CaseDTO
+import com.dubrechi.ambag.Application.Companion.admitted
+import com.dubrechi.ambag.Application.Companion.died
+import com.dubrechi.ambag.Application.Companion.recovered
 import com.dubrechi.ambag.CoroutineFunctions
 import com.dubrechi.ambag.R
 import com.dubrechi.ambag.activities.CasesActivity
@@ -31,13 +31,13 @@ import kotlinx.coroutines.withContext
 class Cases : Fragment(), OnChartValueSelectedListener{
 
     override fun onNothingSelected() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return
     }
 
     override fun onValueSelected(e: Entry?, h: Highlight?) {
         val pieEntry = e as PieEntry
-//        Log.i("I clicked on", pieEntry.label.toString())
         val intent = Intent (activity, CasesActivity::class.java)
+        intent.putExtra("label",pieEntry.label.toString())
         activity?.startActivity(intent)
     }
 
@@ -46,9 +46,10 @@ class Cases : Fragment(), OnChartValueSelectedListener{
             withContext(Main) {
 
                 val cases = CoroutineFunctions().getCases()
-                val recovered: MutableList<CaseDTO> = ArrayList()
-                val admitted: MutableList<CaseDTO> = ArrayList()
-                val died: MutableList<CaseDTO> = ArrayList()
+
+                recovered.clear()
+                admitted.clear()
+                died.clear()
 
                 for (case in cases) {
 
@@ -114,7 +115,7 @@ class Cases : Fragment(), OnChartValueSelectedListener{
         super.onViewCreated(view, savedInstanceState)
 
         getCases()
-        
+
         mp_piechart.setOnChartValueSelectedListener(this)
         mp_piechart.setTouchEnabled(true)
 
