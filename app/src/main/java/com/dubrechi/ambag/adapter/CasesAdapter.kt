@@ -38,7 +38,8 @@ class CasesAdapter(val items: List<CaseDTO>) : RecyclerView.Adapter<RecyclerView
         holder.tv_hospital_admitted_to.text = case.hospital_admitted_to
         holder.tv_had_recent_travel_history_abroad.text = case.had_recent_travel_history_abroad
         holder.tv_status.text = case.status
-        holder.tv_notes.text = case.notes
+        holder.tv_other_information.text = case.other_information
+        holder.tv_source.text = case.source
     }
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
@@ -51,7 +52,8 @@ class CasesAdapter(val items: List<CaseDTO>) : RecyclerView.Adapter<RecyclerView
         val tv_hospital_admitted_to: TextView  = view.tv_hospital_admitted_to
         val tv_had_recent_travel_history_abroad: TextView  = view.tv_had_recent_travel_history_abroad
         val tv_status: TextView  = view.tv_status
-        val tv_notes: TextView  = view.tv_notes
+        val tv_other_information: TextView  = view.tv_other_information
+        val tv_source: TextView = view.tv_source
 
     }
 

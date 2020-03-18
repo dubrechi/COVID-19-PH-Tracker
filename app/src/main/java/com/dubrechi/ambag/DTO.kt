@@ -8,7 +8,9 @@ data class CaseDTO(val case_no: String?,
                    val hospital_admitted_to: String?,
                    val had_recent_travel_history_abroad: String?,
                    val status: String?,
-                   val notes: String?)
+                   val notes: String?,
+                   val other_information: String?,
+                   val source: String?)
 data class CaseOutsidePhDTO (val country_territory_place: String?,
                              val confirmed: String?,
                              val recovered: String?,

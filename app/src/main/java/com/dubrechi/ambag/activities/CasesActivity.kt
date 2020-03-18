@@ -9,7 +9,6 @@ import com.dubrechi.ambag.Application.Companion.died
 import com.dubrechi.ambag.Application.Companion.recovered
 import com.dubrechi.ambag.adapter.CasesAdapter
 import kotlinx.android.synthetic.main.activity_cases.*
-import kotlinx.android.synthetic.main.fragment_patients_under_investigation.*
 
 
 class CasesActivity : AppCompatActivity() {
@@ -27,17 +26,11 @@ class CasesActivity : AppCompatActivity() {
         rv_cases.layoutManager = LinearLayoutManager(this)
         rv_cases.adapter = CasesAdapter(cases)
 
-        if (swipeContainer.isRefreshing) {
-            swipeContainer.isRefreshing = false
-        }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cases)
-
-//        tv_text.text = intent.extras?.get("label").toString()
 
         initCases(intent.extras?.get("label").toString())
     }
