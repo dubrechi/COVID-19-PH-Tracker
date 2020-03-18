@@ -7,6 +7,7 @@ import com.dubrechi.ambag.*
 import com.dubrechi.ambag.Application.Companion.admitted
 import com.dubrechi.ambag.Application.Companion.died
 import com.dubrechi.ambag.Application.Companion.recovered
+import com.dubrechi.ambag.Application.Companion.tba
 import com.dubrechi.ambag.adapter.CasesAdapter
 import kotlinx.android.synthetic.main.activity_cases.*
 
@@ -21,6 +22,7 @@ class CasesActivity : AppCompatActivity() {
             getString(R.string.recovered) -> cases = recovered
             getString(R.string.admitted) -> cases = admitted
             getString(R.string.died) -> cases = died
+            getString(R.string.tba) -> cases = tba
         }
 
         rv_cases.layoutManager = LinearLayoutManager(this)

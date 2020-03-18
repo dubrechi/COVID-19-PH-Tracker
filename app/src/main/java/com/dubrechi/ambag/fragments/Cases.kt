@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.dubrechi.ambag.Application.Companion.admitted
 import com.dubrechi.ambag.Application.Companion.died
 import com.dubrechi.ambag.Application.Companion.recovered
+import com.dubrechi.ambag.Application.Companion.tba
 import com.dubrechi.ambag.CoroutineFunctions
 import com.dubrechi.ambag.R
 import com.dubrechi.ambag.activities.CasesActivity
@@ -50,13 +51,15 @@ class Cases : Fragment(), OnChartValueSelectedListener{
                 recovered.clear()
                 admitted.clear()
                 died.clear()
+                tba.clear()
 
                 for (case in cases) {
 
                     when {
                         case.status == getString(R.string.recovered) -> recovered.add(case)
                         case.status == getString(R.string.admitted) -> admitted.add(case)
-                        case.status == getString(R.string.died) -> died.add(case)
+                        case.status == getString(R.string.died) || case.status == getString(R.string.died2)  -> died.add(case)
+                        else -> tba.add(case)
                     }
 
                 }
@@ -70,8 +73,12 @@ class Cases : Fragment(), OnChartValueSelectedListener{
                 listPie.add(PieEntry(admitted.count().toFloat(), getString(R.string.admitted)))
                 listColors.add(ContextCompat.getColor(context!!, R.color.admitted))
 
+                listPie.add(PieEntry(tba.count().toFloat(), getString(R.string.tba)))
+                listColors.add(ContextCompat.getColor(context!!, R.color.tba))
+
                 listPie.add(PieEntry(died.count().toFloat(), getString(R.string.died)))
                 listColors.add(ContextCompat.getColor(context!!, R.color.died))
+
 
                 val pieDataSet = PieDataSet(listPie, "")
                 pieDataSet.colors = listColors

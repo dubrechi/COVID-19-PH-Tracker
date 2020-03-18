@@ -3,4 +3,6 @@
     <string name="recovered">Recovered</string>
     <string name="admitted">Admitted</string>
     <string name="died">Dead</string>
+    <string name="died2">Died</string>
+    <string name="tba">TBA</string>
 </resources>

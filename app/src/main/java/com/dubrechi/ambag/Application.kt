@@ -10,5 +10,6 @@ class Application: Application(){
         val recovered: MutableList<CaseDTO> = ArrayList()
         val admitted: MutableList<CaseDTO> = ArrayList()
         val died: MutableList<CaseDTO> = ArrayList()
+        val tba: MutableList<CaseDTO> = ArrayList()
     }
 }
