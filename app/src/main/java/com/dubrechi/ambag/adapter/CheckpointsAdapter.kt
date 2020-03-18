@@ -11,13 +11,15 @@ import com.dubrechi.ambag.R
 import kotlinx.android.synthetic.main.item_checkpoints.*
 import kotlinx.android.synthetic.main.item_checkpoints.view.*
 
-class CheckpointsAdapter (private val items: MutableList<CheckpointsDTO>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CheckpointsAdapter(private val items: MutableList<CheckpointsDTO>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var context: MainActivity? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
-        val view: View = LayoutInflater.from(parent?.context).inflate(R.layout.item_checkpoints, parent, false)
+        val view: View =
+            LayoutInflater.from(parent?.context).inflate(R.layout.item_checkpoints, parent, false)
         context = parent.context as MainActivity
 
         return ViewHolder(view)
@@ -42,23 +44,15 @@ class CheckpointsAdapter (private val items: MutableList<CheckpointsDTO>) : Recy
 
         holder.tvLatitude.text = checkpointsDTO.lat
         holder.tvLongitude.text = checkpointsDTO.lng
+        
+        holder.tvDescription.text = checkpointsDTO.description
+        holder.tvDescriptionLabel.text = "Description"
 
-
-        if (checkpointsDTO.description?.trim().toString() == "") {
-
-            context?.tv_label_description?.visibility = View.GONE
-            context?.tv_description?.visibility = View.GONE
-
-        } else {
-
-            holder.tvDescription.text = checkpointsDTO.description
-            holder.tvDescriptionLabel.text = "Description"
-        }
 
     }
 
 
-    class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvDistrict: TextView = view.tv_district
         val tvCity: TextView = view.tv_city
 
