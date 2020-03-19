@@ -12,3 +12,8 @@ git clone https://github.com/dubrechi/COVID-19-PH-Tracker.git
 
 ## Data
 This project is using [coronavirus-ph-api](https://github.com/sorxrob/coronavirus-ph-api) by [sorxob](https://github.com/sorxrob)
+
+## Maintainers
+This project is mantained by:
+* [dubrechi](https://github.com/dubrechi)
+* [Ej Baliton](https://github.com/theblablablahs)
